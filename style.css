@@ -11,6 +11,13 @@ html, body {
     overflow: hidden;
 }
 
+@media (max-width: 768px) {
+    html, body {
+        overflow: auto;
+        height: auto;
+    }
+}
+
 /* scroll effect */
 .scroll-container{
     display: flex;
@@ -18,6 +25,16 @@ html, body {
     height: 100vh;
     transition: transform 0.5s ease-in-out;
     overflow: hidden;
+}
+
+@media (max-width: 768px) {
+    .scroll-container {
+        display: block;
+        width: 100%;
+        height: auto;
+        transition: none;
+        overflow: visible;
+    }
 }
 .page1, .page2, .page3, .page4 {
     width: 100vw;
@@ -30,6 +47,19 @@ html, body {
     text-align: center;
     padding: 0;
     overflow: hidden; 
+}
+
+@media (max-width: 768px) {
+    .page1, .page2, .page3, .page4 {
+        width: 100%;
+        height: auto;
+        min-height: 100vh;
+        flex-shrink: none;
+        position: static;
+        display: block;
+        padding: 2rem 1rem;
+        overflow: visible;
+    }
 }
 
 /* page-specific backgrounds */
@@ -128,6 +158,13 @@ html, body {
     height: 4rem;
     background-color: rgba(37, 44, 132, 0.9);
 }
+
+@media (max-width: 768px) {
+    .navbar {
+        position: static;
+        margin-bottom: 1rem;
+    }
+}
 .navbar-head {
     display: flex;
     align-items: center;
@@ -143,6 +180,12 @@ html, body {
     font-size: 2rem;
     font-weight: 100;
     color: #CABDFF;
+}
+
+@media (max-width: 768px) {
+    .navbar-title {
+        font-size: 1.5rem;
+    }
 }
 .navbar-links {
     display: flex;
@@ -192,6 +235,15 @@ html, body {
     text-align: left;
 }
 
+@media (max-width: 768px) {
+    .hero-section {
+        flex-direction: column;
+        padding: 1rem;
+        height: auto;
+        text-align: center;
+    }
+}
+
 .hero-content {
     display: flex;
     flex-direction: column;
@@ -201,6 +253,14 @@ html, body {
     max-width: 1280px;
     flex-direction: row;
     align-items: flex-start;
+}
+
+@media (max-width: 768px) {
+    .hero-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
 }
 
 .hero-left {
@@ -281,6 +341,16 @@ h1{
     color: white;
     font-family: "Montserrat", sans-serif;
 }
+
+@media (max-width: 768px) {
+    .board-section {
+        flex-direction: column;
+        margin-top: 0;
+        height: auto;
+        padding: 2rem 1rem;
+        text-align: center;
+    }
+}
 .board-content {
     display: flex;
     flex-direction: column;
@@ -331,6 +401,22 @@ h1{
     position: relative;
     z-index: 1;
 }
+
+@media (max-width: 768px) {
+    .learn-section {
+        margin-top: 0;
+        height: 100vh;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        position: relative;
+    }
+    .learn-section > * {
+        transform: translateY(10vh);
+    }
+}
 .learn-content{
     display: flex;
     flex-direction: row;
@@ -375,6 +461,29 @@ h1{
      align-items: flex-start;
      padding-left: 5vw;
      margin-top: 8rem;
+}
+
+@media (max-width: 768px) {
+    .learn-left {
+        flex: none !important;
+        justify-content: center !important;
+        padding-left: 0 !important;
+    }
+    .learn-right {
+        flex: none !important;
+        justify-content: center !important;
+        align-items: center !important;
+        padding-left: 0 !important;
+        margin-top: 0 !important;
+    }
+    .learn-right h1 {
+        margin-top: 75% !important;
+    }
+    .learn-images {
+        margin-top: 2rem !important;
+        justify-content: center !important;
+        align-items: center !important;
+    }
 }
 .learn-right h1{ 
     margin: 0; 
@@ -563,6 +672,14 @@ h1{
     height: calc(100vh - 4rem);
     position: relative;
     z-index: 1;
+}
+
+@media (max-width: 768px) {
+    .activities-section {
+        margin-top: 0;
+        height: auto;
+        padding: 2rem 1rem;
+    }
 }
 .activities-content{
     display: flex;

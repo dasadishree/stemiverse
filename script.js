@@ -6,6 +6,11 @@
     var totalPages = container.children.length;
     var isAnimating = false;
 
+    // Check if device is mobile
+    function isMobile() {
+        return window.innerWidth <= 768;
+    }
+
     function snapTo(index){
         if(index < 0) index = 0;
         if(index > totalPages - 1) index = totalPages - 1;
@@ -15,11 +20,13 @@
     }
 
     window.addEventListener('resize', function(){
-        snapTo(currentIndex);
+        if (!isMobile()) {
+            snapTo(currentIndex);
+        }
     });
 
     window.addEventListener('wheel', function(e){
-        if(isAnimating) return;
+        if(isMobile() || isAnimating) return;
         var delta = e.deltaY || e.wheelDelta || -e.detail;
         if(Math.abs(delta) < 10) return; 
         e.preventDefault();
@@ -33,7 +40,7 @@
     }, { passive: false });
 
     window.addEventListener('keydown', function(e){
-        if(isAnimating) return;
+        if(isMobile() || isAnimating) return;
         if(e.key === 'ArrowRight' || e.key === 'PageDown'){
             e.preventDefault();
             isAnimating = true; snapTo(currentIndex + 1);
