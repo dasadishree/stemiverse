@@ -183,3 +183,62 @@ h1{
     height: auto;
     object-fit: cover;
 }
+
+/* board page */
+.board-section{
+    display: flex;
+    align-items: center;
+    padding: 2rem;
+    margin-top: 4rem;
+    height: calc(100vh - 4rem);
+    position: relative;
+    z-index: 5;
+    text-align: left;
+    color: white;
+    font-family: "Montserrat", sans-serif;
+}
+.board-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 1280px;
+    flex-direction: row;
+    align-items: flex-start;
+}
+.board-left {
+    max-width: 600px;
+    margin-bottom: 2rem;
+    margin-right: 4rem;
+    padding-right: 15vw;
+}
+.stars{
+    width: 10vw
+}
+.board-right {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 100%;
+    max-width: 500px;
+}
+
+.board-card {
+    background: linear-gradient(180deg, #6752C2, #765890);
+    border-radius: 9999px;
+    padding: 1.5rem 2rem;
+    box-shadow: 0 8px 15px rgba(255, 255, 255, 0.3);
+    text-align: center;
+    color: var(--text-color);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    width: 40vw;
+}
+
+.board-card h3, .board-card p {
+    margin: 0;
+}
+.board-card:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
+}
