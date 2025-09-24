@@ -1,0 +1,236 @@
+@import url('https://fonts.googleapis.com/css2?family=Aguafina+Script&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+body {
+    background-color:#252C84;
+}
+
+h1{
+    color:#FFFFFF;
+    font-family: "Aguafina Script", cursive;
+    font-weight: 100;
+    font-style: normal;
+    font-size: 100px;
+}
+
+/* navbar */
+.navbar-title{
+    align-items:flex-start;
+}
+.navbar {
+    display: flex;
+    padding: 0rem 1rem;
+    justify-content: space-between;
+    max-width: 95%;
+    align-items: center;
+    margin: 0 auto;
+    position: relative;
+    z-index: 0;
+}
+.navbar-head {
+    display: flex;
+    align-items: center;
+}
+.navbar-logo {
+    height: 40px;
+    width: 40px;
+    color: #CABDFF;
+    margin-right: 0.75rem;
+}
+.navbar-title {
+    font-family: "Aguafina Script", cursive;
+    font-size: 2rem;
+    font-weight: 100;
+    color: #CABDFF;
+}
+.navbar-links {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+.navbar-links a {
+    font-family: "Montserrat", sans-serif;
+    color: #CABDFF;
+    font-size: 1.125rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+    padding: 0.25rem 0;
+    position: relative;
+}
+.navbar-links a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #CABDFF;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease-in-out;
+}
+.navbar-links a:hover {
+    color: #CABDFF;
+}
+.navbar-links a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+
+.hero-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+    position: relative;
+    z-index: 5;
+    min-height: 80vh;
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 1280px;
+}
+
+.hero-left {
+    max-width: 600px;
+    margin-bottom: 2rem;
+}
+
+.hero-title {
+    font-family: "Aguafina Script", cursive;
+    font-size: 3rem;
+    font-weight: 100;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+}
+
+.hero-description {
+    font-size: 1.125rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+.hero-button {
+    background-color: transparent;
+    border: 2px solid var(--text-color);
+    color: var(--text-color);
+    padding: 0.75rem 2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 9999px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.hero-button:hover {
+    background-color: var(--text-color);
+    color: var(--primary-bg);
+}
+
+.hero-right {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    margin-top: 2rem;
+}
+
+.planet-large, .planet-small {
+    position: absolute;
+    border-radius: 50%;
+    background: radial-gradient(circle, #E1BFFF 0%, #A478EE 100%);
+    box-shadow: 0 0 20px rgba(179, 137, 255, 0.5);
+}
+
+.planet-large {
+    width: 180px;
+    height: 180px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.planet-small {
+    width: 100px;
+    height: 100px;
+    top: 20%;
+    left: 80%;
+}
+
+.planet-ring {
+    position: absolute;
+    width: 250px;
+    height: 50px;
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+    transform: rotate(-15deg);
+    top: calc(50% + 50px);
+    left: calc(50% - 125px);
+}
+
+.clouds {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 250px;
+    background: linear-gradient(to top, #6A1B8C 0%, #E98595 100%);
+    mask-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 200"><path fill="%23FFFFFF" d="M0,192C0,192 100,10 200,10C300,10 400,192 500,192C600,192 700,10 800,10C900,10 1000,192 1000,192L1000,200L0,200L0,192Z"/></svg>');
+    mask-size: 100% 100%;
+    -webkit-mask-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 200"><path fill="%23FFFFFF" d="M0,192C0,192 100,10 200,10C300,10 400,192 500,192C600,192 700,10 800,10C900,10 1000,192 1000,192L1000,200L0,200L0,192Z"/></svg>');
+    -webkit-mask-size: 100% 100%;
+}
+
+@media (min-width: 768px) {
+    .hero-section {
+        flex-direction: row;
+        text-align: left;
+        padding-top: 4rem;
+        align-items: flex-start;
+    }
+
+    .hero-content {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    .hero-right {
+        height: auto;
+        margin-top: 0;
+    }
+
+    .navbar-links {
+        flex-direction: row;
+    }
+
+    .hero-left {
+        margin-right: 4rem;
+        margin-bottom: 0;
+    }
+
+    .planet-large {
+        width: 250px;
+        height: 250px;
+    }
+
+    .planet-small {
+        width: 150px;
+        height: 150px;
+        top: 20%;
+        left: 80%;
+    }
+
+    .planet-ring {
+        width: 350px;
+        height: 70px;
+        top: calc(50% + 50px);
+        left: calc(50% - 175px);
+    }
+}
