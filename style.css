@@ -32,6 +32,16 @@ html, body {
     overflow: hidden; 
 }
 
+/* page-specific backgrounds */
+.page4 {
+    background: linear-gradient(90deg, #DC6E9D, #1F2460);
+}
+.page2{
+    background: linear-gradient(90deg, #252C84, #1F2460);
+}
+.page3{
+    background: linear-gradient(90deg, #1F2460,#090A1E,);
+}
 
 /* navbar */
 .navbar-title{
@@ -181,7 +191,7 @@ h1{
     left: 0;
     bottom: 0;
     width: 100%;
-    z-index: -1;
+    z-index: 0; 
 }
 
 .clouds img {
@@ -197,7 +207,7 @@ h1{
     align-items: center;
     padding: 2rem;
     padding-left: 2rem;
-    margin-top: 2rem;
+    margin-top: 10rem;
     height: calc(100vh - 4rem);
     position: relative;
     z-index: 5;
@@ -243,6 +253,72 @@ h1{
     height: auto;
 }
 
+
+/* learn page */
+.learn-section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    margin-top: 4rem;
+    height: calc(100vh - 4rem);
+    position: relative;
+    z-index: 1;
+}
+.learn-content{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 20080px;
+    margin: 0 auto;
+    gap: 2rem;
+}
+.learn-left{ flex: 2; display: flex; justify-content: flex-start; padding-left: 0; overflow: visible; }
+.learn-right{
+     flex: 1; 
+     display: flex; 
+     justify-content: flex-start; 
+     flex-direction: column;
+     align-items: flex-start;
+     padding-left: 5vw;
+     margin-top: 8rem;
+}
+.learn-right h1{ margin: 0; color: #FFFFFF; font-family: "Aguafina Script", cursive; font-size: 7rem; font-weight: 100; padding: 0; margin: 0; height:80px
+}
+.learn-stars{ width: 10vw; margin-top: 0rem;}
+.learn-iframe{
+    width: 200%;
+    max-width: 1400px;
+    height: 250px;
+    border-radius: 16px;
+    margin-left: -8rem;
+    position: relative;
+    z-index: 5;
+}
+
+/* learn page images */
+.learn-images{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 2rem;
+    z-index: 10;
+    margin-top: 1rem;
+}
+.learn-image{
+    width: 350px;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 12px;
+    transition: transform 0.3s ease-in-out;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+.learn-image:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+}
 .board-card {
     background: linear-gradient(180deg, #6752C2, #765890);
     border-radius: 9999px;
@@ -252,6 +328,8 @@ h1{
     color: var(--text-color);
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
     width: 40vw;
+    position: relative;
+    z-index: 10;
 }
 
 .board-card h3, .board-card p {
@@ -260,4 +338,61 @@ h1{
 .board-card:hover {
     transform: translateY(-5px) scale(1.02);
     box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
+}
+
+.sideclouds{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    height: 100vh;
+    max-height: 100vh;
+    z-index: 0;
+}
+.sideclouds img{
+    height: 100%;
+    width: auto;
+    display: block;
+}
+.smallclouds{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 0;
+}
+.smallclouds img{
+    width: auto;
+    height: auto;
+    display: block;
+}
+.left-ornaments{
+    position: absolute;
+    left: 0;
+    top: 20vh;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    z-index: 1;
+}
+.left-ornaments img{
+    display: block;
+}
+.left-moon{ width: 200px; height: auto; margin-top: 1.5rem; }
+.left-planet{ width: 300px; height: auto; margin-left: 2rem; }
+
+.learn-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.learn-card {
+    background: linear-gradient(90deg, #252C84, #5D377B);
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 250px;
 }
