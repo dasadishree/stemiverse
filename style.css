@@ -38,6 +38,70 @@ html, body {
     position: relative;
 }
 
+.page4::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        radial-gradient(3px 3px at 15px 25px, #fff, transparent),
+        radial-gradient(1px 1px at 35px 65px, #fff, transparent),
+        radial-gradient(2px 2px at 55px 15px, #fff, transparent),
+        radial-gradient(1px 1px at 75px 85px, #fff, transparent),
+        radial-gradient(2px 2px at 95px 45px, #fff, transparent),
+        radial-gradient(1px 1px at 115px 5px, #fff, transparent),
+        radial-gradient(3px 3px at 135px 75px, #fff, transparent),
+        radial-gradient(1px 1px at 155px 35px, #fff, transparent),
+        radial-gradient(2px 2px at 175px 95px, #fff, transparent),
+        radial-gradient(1px 1px at 195px 55px, #fff, transparent),
+        radial-gradient(2px 2px at 215px 15px, #fff, transparent),
+        radial-gradient(1px 1px at 235px 85px, #fff, transparent),
+        radial-gradient(3px 3px at 255px 25px, #fff, transparent),
+        radial-gradient(1px 1px at 275px 65px, #fff, transparent),
+        radial-gradient(2px 2px at 295px 5px, #fff, transparent),
+        radial-gradient(1px 1px at 315px 45px, #fff, transparent),
+        radial-gradient(2px 2px at 335px 95px, #fff, transparent),
+        radial-gradient(1px 1px at 355px 15px, #fff, transparent),
+        radial-gradient(3px 3px at 375px 75px, #fff, transparent),
+        radial-gradient(1px 1px at 395px 35px, #fff, transparent),
+        radial-gradient(2px 2px at 415px 85px, #fff, transparent),
+        radial-gradient(1px 1px at 435px 25px, #fff, transparent),
+        radial-gradient(2px 2px at 455px 65px, #fff, transparent),
+        radial-gradient(1px 1px at 475px 5px, #fff, transparent),
+        radial-gradient(3px 3px at 495px 55px, #fff, transparent),
+        radial-gradient(1px 1px at 515px 95px, #fff, transparent),
+        radial-gradient(2px 2px at 535px 15px, #fff, transparent),
+        radial-gradient(1px 1px at 555px 75px, #fff, transparent),
+        radial-gradient(2px 2px at 575px 35px, #fff, transparent),
+        radial-gradient(1px 1px at 595px 85px, #fff, transparent),
+        radial-gradient(3px 3px at 615px 25px, #fff, transparent),
+        radial-gradient(1px 1px at 635px 65px, #fff, transparent),
+        radial-gradient(2px 2px at 655px 5px, #fff, transparent),
+        radial-gradient(1px 1px at 675px 45px, #fff, transparent),
+        radial-gradient(2px 2px at 695px 95px, #fff, transparent),
+        radial-gradient(1px 1px at 715px 15px, #fff, transparent),
+        radial-gradient(3px 3px at 735px 75px, #fff, transparent),
+        radial-gradient(1px 1px at 755px 35px, #fff, transparent),
+        radial-gradient(2px 2px at 775px 85px, #fff, transparent),
+        radial-gradient(1px 1px at 795px 25px, #fff, transparent),
+        radial-gradient(2px 2px at 815px 65px, #fff, transparent),
+        radial-gradient(1px 1px at 835px 5px, #fff, transparent),
+        radial-gradient(3px 3px at 855px 55px, #fff, transparent),
+        radial-gradient(1px 1px at 875px 95px, #fff, transparent),
+        radial-gradient(2px 2px at 895px 15px, #fff, transparent),
+        radial-gradient(1px 1px at 915px 75px, #fff, transparent),
+        radial-gradient(2px 2px at 935px 35px, #fff, transparent),
+        radial-gradient(1px 1px at 955px 85px, #fff, transparent),
+        radial-gradient(3px 3px at 975px 25px, #fff, transparent),
+        radial-gradient(1px 1px at 995px 65px, #fff, transparent);
+    background-repeat: repeat;
+    background-size: 1000px 100px;
+    z-index: 0;
+    opacity: 0.9;
+}
+
 .page2{
     background: linear-gradient(90deg, #252C84, #1F2460);
 }
@@ -273,9 +337,26 @@ h1{
     align-items: center;
     justify-content: center;
     width: 100%;
-    max-width: 20080px;
+    max-width: 1400px;
     margin: 0 auto;
     gap: 2rem;
+}
+
+@media (max-width: 1200px) {
+    .learn-content {
+        flex-direction: column;
+        gap: 3rem;
+    }
+    .learn-left {
+        flex: none;
+        width: 100%;
+        max-width: 600px;
+    }
+    .learn-right {
+        flex: none;
+        width: 100%;
+        text-align: center;
+    }
 }
 .learn-left{ flex: 2; display: flex; justify-content: flex-start; padding-left: 0; overflow: visible; }
 .learn-right{
@@ -287,7 +368,28 @@ h1{
      padding-left: 5vw;
      margin-top: 8rem;
 }
-.learn-right h1{ margin: 0; color: #FFFFFF; font-family: "Aguafina Script", cursive; font-size: 7rem; font-weight: 100; padding: 0; margin: 0; height:80px
+.learn-right h1{ 
+    margin: 0; 
+    color: #FFFFFF; 
+    font-family: "Aguafina Script", cursive; 
+    font-size: 7rem; 
+    font-weight: 100; 
+    padding: 0; 
+    height: 80px;
+}
+
+@media (max-width: 1200px) {
+    .learn-right h1 {
+        font-size: 5rem;
+        height: 60px;
+    }
+}
+
+@media (max-width: 768px) {
+    .learn-right h1 {
+        font-size: 4rem;
+        height: 50px;
+    }
 }
 .learn-stars{ width: 10vw; margin-top: 0rem;}
 .learn-iframe{
@@ -300,6 +402,21 @@ h1{
     z-index: 5;
 }
 
+@media (max-width: 1200px) {
+    .learn-iframe {
+        width: 100%;
+        max-width: 600px;
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .learn-iframe {
+        height: 200px;
+        max-width: 100%;
+    }
+}
+
 /* learn page images */
 .learn-images{
     display: flex;
@@ -308,6 +425,22 @@ h1{
     gap: 2rem;
     z-index: 10;
     margin-top: 1rem;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 1200px) {
+    .learn-images {
+        margin-top: 2rem;
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .learn-images {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
 }
 .learn-image{
     width: 350px;
@@ -316,6 +449,20 @@ h1{
     border-radius: 12px;
     transition: transform 0.3s ease-in-out;
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+@media (max-width: 1200px) {
+    .learn-image {
+        width: 280px;
+        height: 280px;
+    }
+}
+
+@media (max-width: 768px) {
+    .learn-image {
+        width: 250px;
+        height: 250px;
+    }
 }
 .learn-image:hover {
     transform: translateY(-5px) scale(1.02);
@@ -374,7 +521,7 @@ h1{
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    z-index: 1;
+    z-index: -1;
 }
 .left-ornaments img{
     display: block;
@@ -415,9 +562,41 @@ h1{
     align-items: center;
     justify-content: center;
     width: 100%;
-    max-width: 1280px;
+    max-width: clamp(1000px, 95vw, 1400px);
     margin: 0 auto;
-    gap: 4rem;
+    gap: clamp(3rem, 6vw, 6rem);
+    padding: 0 clamp(1rem, 3vw, 3rem);
+}
+
+@media (max-width: 1200px) {
+    .activities-content {
+        flex-direction: column;
+        gap: clamp(2rem, 4vw, 4rem);
+        max-width: 90vw;
+    }
+    .activities-left {
+        flex: none;
+        width: 100%;
+        text-align: center;
+    }
+    .activities-grid {
+        flex: none;
+        width: 100%;
+        max-width: clamp(500px, 70vw, 800px);
+    }
+}
+
+@media (max-width: 768px) {
+    .activities-content {
+        gap: clamp(1.5rem, 3vw, 2.5rem);
+        padding: 0 1rem;
+    }
+    .activities-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        gap: clamp(1rem, 2vw, 1.5rem);
+        max-width: 100%;
+    }
 }
 .activities-left{
     flex: 1;
@@ -431,26 +610,30 @@ h1{
     margin: 0;
     color: #FFFFFF;
     font-family: "Aguafina Script", cursive;
-    font-size: 7rem;
+    font-size: clamp(4rem, 8vw, 9rem);
     font-weight: 100;
+    line-height: 0.9;
 }
-.activities-left img{
-    position: absolute;
-    top:6vw;
-    width: 100%;
-    max-width: 300px;
-    height: auto;
-    margin-top: 1rem;
-    margin-left: -2rem;
-    z-index: 5;
+
+@media (max-width: 1200px) {
+    .activities-left h1 {
+        font-size: clamp(3.5rem, 7vw, 6rem);
+    }
+}
+
+@media (max-width: 768px) {
+    .activities-left h1 {
+        font-size: clamp(3rem, 6vw, 4.5rem);
+    }
 }
 .activities-grid{
     flex: 2;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, 1fr);
-    gap: 2rem;
-    max-width: 800px;
+    gap: clamp(1.5rem, 3vw, 3rem);
+    max-width: clamp(600px, 80vw, 1000px);
+    width: 100%;
     position: relative;
     z-index: 10;
 }
@@ -499,16 +682,30 @@ h1{
     transition: transform 0.3s ease-in-out;
     box-shadow: 0 4px 8px rgba(255,255,255,0.2);
 }
+
+@media (max-width: 768px) {
+    .activity-image {
+        aspect-ratio: 1;
+    }
+}
 .activity-image:hover {
     transform: translateY(-5px) scale(1.02);
     box-shadow: 0 8px 16px rgba(255,255,255,0.3);
 }
 .activity-caption{
-    margin: 0.5rem 0 0 0;
+    margin: clamp(0.5rem, 1vw, 1rem) 0 0 0;
     color: #FFFFFF;
     font-family: "Montserrat", sans-serif;
-    font-size: 0.9rem;
+    font-size: clamp(0.8rem, 1.2vw, 1.1rem);
     text-align: center;
     line-height: 1.2;
     max-width: 100%;
+    font-weight: 500;
+}
+
+@media (max-width: 768px) {
+    .activity-caption {
+        font-size: clamp(0.7rem, 1vw, 0.9rem);
+        margin: clamp(0.3rem, 0.8vw, 0.8rem) 0 0 0;
+    }
 }
