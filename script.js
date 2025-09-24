@@ -1,8 +1,9 @@
 // scroll function
+var currentIndex = 0; // Make currentIndex global
+
 (function(){
     var container = document.querySelector('.scroll-container');
     if(!container) return;
-    var currentIndex = 0;
     var totalPages = container.children.length;
     var isAnimating = false;
 
@@ -53,6 +54,38 @@
         }
     });
 })();
+
+// Navigation function
+function navigateToPage(pageId) {
+    const container = document.querySelector('.scroll-container');
+    if(!container) return;
+    
+    const pageIndex = {
+        'home': 0,
+        'board': 1,
+        'learn': 2,
+        'activities': 3
+    };
+    
+    const targetIndex = pageIndex[pageId];
+    if(targetIndex !== undefined) {
+        const offset = -targetIndex * window.innerWidth;
+        container.style.transform = 'translateX(' + offset + 'px)';
+        currentIndex = targetIndex;
+    }
+}
+
+// Add click event listeners to navbar links
+document.addEventListener('DOMContentLoaded', function() {
+    const navLinks = document.querySelectorAll('.navbar-links a[href^="#"]');
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetPage = this.getAttribute('href').substring(1);
+            navigateToPage(targetPage);
+        });
+    });
+});
 
 //  slideshow 
 function changeSlide(button, direction) {
