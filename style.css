@@ -178,17 +178,17 @@ h1{
 
 .clouds {
     position: absolute;
-    top: 70%; 
-    left: -1%;
-    width: 101%;
-    z-index: -1; 
-    transform: translateY(-50%);
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    z-index: -1;
 }
 
 .clouds img {
     width: 100%;
     height: auto;
     object-fit: cover;
+    display: block; /* remove inline-image baseline gap */
 }
 
 /* board page */
