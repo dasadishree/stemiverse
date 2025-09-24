@@ -1,3 +1,4 @@
+// scroll function
 (function(){
     var container = document.querySelector('.scroll-container');
     if(!container) return;
@@ -45,3 +46,47 @@
         }
     });
 })();
+
+//  slideshow 
+function changeSlide(button, direction) {
+    const container = button.parentElement;
+    const img = container.querySelector('.slideshow-img');
+    const folder = img.getAttribute('data-folder');
+    const current = parseInt(img.getAttribute('data-current'));
+    const next = current + direction;
+    
+    const testImg = new Image();
+    testImg.onload = function() {
+        img.src = `activities/${folder}/${next}.png`;
+        img.setAttribute('data-current', next);
+    };
+    testImg.onerror = function() {
+        if (direction > 0) {
+            img.src = `activities/${folder}/1.png`;
+            img.setAttribute('data-current', 1);
+        } else {
+            findLastImage(folder, img);
+        }
+    };
+    testImg.src = `activities/${folder}/${next}.png`;
+}
+
+function findLastImage(folder, img) {
+    let lastNum = 1;
+    let testNum = 2;
+    
+    function checkImage() {
+        const testImg = new Image();
+        testImg.onload = function() {
+            lastNum = testNum;
+            testNum++;
+            checkImage();
+        };
+        testImg.onerror = function() {
+            img.src = `activities/${folder}/${lastNum}.png`;
+            img.setAttribute('data-current', lastNum);
+        };
+        testImg.src = `activities/${folder}/${testNum}.png`;
+    }
+    checkImage();
+}

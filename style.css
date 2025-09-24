@@ -35,7 +35,9 @@ html, body {
 /* page-specific backgrounds */
 .page4 {
     background: linear-gradient(90deg, #DC6E9D, #1F2460);
+    position: relative;
 }
+
 .page2{
     background: linear-gradient(90deg, #252C84, #1F2460);
 }
@@ -395,4 +397,118 @@ h1{
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     text-align: center;
     width: 250px;
+}
+
+/* activities page */
+.activities-section{
+    display: flex;
+    align-items: center;
+    padding: 2rem;
+    margin-top: 4rem;
+    height: calc(100vh - 4rem);
+    position: relative;
+    z-index: 1;
+}
+.activities-content{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    gap: 4rem;
+}
+.activities-left{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    position: relative;
+    z-index: 10;
+}
+.activities-left h1{
+    margin: 0;
+    color: #FFFFFF;
+    font-family: "Aguafina Script", cursive;
+    font-size: 7rem;
+    font-weight: 100;
+}
+.activities-left img{
+    position: absolute;
+    top:6vw;
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    margin-top: 1rem;
+    margin-left: -2rem;
+    z-index: 5;
+}
+.activities-grid{
+    flex: 2;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 2rem;
+    max-width: 800px;
+    position: relative;
+    z-index: 10;
+}
+.activity-item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.slideshow-container{
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.slideshow-arrow{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 10;
+    transition: background 0.3s ease;
+}
+.slideshow-arrow:hover{
+    background: rgba(0, 0, 0, 0.8);
+}
+.slideshow-prev{
+    left: 10px;
+}
+.slideshow-next{
+    right: 10px;
+}
+.activity-image{
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: 12px;
+    transition: transform 0.3s ease-in-out;
+    box-shadow: 0 4px 8px rgba(255,255,255,0.2);
+}
+.activity-image:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 8px 16px rgba(255,255,255,0.3);
+}
+.activity-caption{
+    margin: 0.5rem 0 0 0;
+    color: #FFFFFF;
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.9rem;
+    text-align: center;
+    line-height: 1.2;
+    max-width: 100%;
 }
