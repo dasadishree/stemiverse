@@ -6,6 +6,12 @@ var currentIndex = 0; // Make currentIndex global
     if(!container) return;
     var totalPages = container.children.length;
     var isAnimating = false;
+    
+    // Initialize mobile scrolling
+    if(isMobile()) {
+        container.style.transform = 'none';
+        return;
+    }
 
     // Check if device is mobile
     function isMobile() {
@@ -13,6 +19,7 @@ var currentIndex = 0; // Make currentIndex global
     }
 
     function snapTo(index){
+        if(isMobile()) return; // Don't apply horizontal scrolling on mobile
         if(index < 0) index = 0;
         if(index > totalPages - 1) index = totalPages - 1;
         currentIndex = index;
@@ -23,6 +30,9 @@ var currentIndex = 0; // Make currentIndex global
     window.addEventListener('resize', function(){
         if (!isMobile()) {
             snapTo(currentIndex);
+        } else {
+            // Reset transform on mobile to ensure normal scrolling
+            container.style.transform = 'none';
         }
     });
 
@@ -59,6 +69,20 @@ var currentIndex = 0; // Make currentIndex global
 function navigateToPage(pageId) {
     const container = document.querySelector('.scroll-container');
     if(!container) return;
+    
+    // Check if device is mobile
+    function isMobile() {
+        return window.innerWidth <= 768;
+    }
+    
+    if(isMobile()) {
+        // On mobile, just scroll to the target element
+        const targetElement = document.getElementById(pageId);
+        if(targetElement) {
+            targetElement.scrollIntoView({ behavior: 'smooth' });
+        }
+        return;
+    }
     
     const pageIndex = {
         'home': 0,
